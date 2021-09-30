@@ -14,6 +14,8 @@ jobs:
   run_tests:
     runs-on: ubuntu-20.04
     steps:
+    - name: checkout
+      uses: actions/checkout@v2
     - name: add table
       run:  curl https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator > table1.cvs
     - uses: actions/upload-artifact@v2
