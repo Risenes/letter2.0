@@ -32,7 +32,7 @@ jobs:
         git clone https://github.com/Risenes/letter2.0
         git config --global user.email "risenes@gmail.com"
         git config --global user.name "Risenes"
-        git add ./output
+        git add table1.cvs
         git commit -m "Add changes"
         
     - name: Push changes # push the output folder to your repo
