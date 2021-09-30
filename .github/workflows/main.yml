@@ -28,7 +28,7 @@ jobs:
         yes| cp -rf table1.cvs ./output/
     - name: Commit files 
       run: |
-        git remote add origin https://github.com/Risenes/letter2.0.git
+        
         git clone https://github.com/Risenes/letter2.0
         git config --global user.email "risenes@gmail.com"
         git config --global user.name "Risenes"
