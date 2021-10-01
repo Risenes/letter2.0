@@ -16,21 +16,20 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v2
-    - name: add table
-      run:  curl https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator > table1.cvs
-    - uses: actions/upload-artifact@v2
-      with:
-        name: my-artifact
-        path: table1.cvs
-    
-    - name: Commit files 
-      run: |
-        
+
+    - name: Clone
+      run: |        
         git clone https://github.com/Risenes/letter2.0
         git config --global user.email "risenes@gmail.com"
         git config --global user.name "Risenes"
-        git add table1.cvs
-        git commit -m "Add changes"
+
+    - name: Load table
+      run:  curl https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator > table1.csv
+    
+    - name: Commit table 
+      run: |
+        git add table1.csv
+        git commit -m "Update table by bot"
         
     - name: Push changes # push the output folder to your repo
       uses: ad-m/github-push-action@master
