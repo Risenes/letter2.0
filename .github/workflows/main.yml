@@ -26,14 +26,10 @@ jobs:
 
     - name: Load table
       run:  curl https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator > table1.csv
-    
-    - name: Commit table 
-      run: |
-        git cat-table1.csv 
-        git add table1.csv
-        git branch -u origin/main
-        git commit -m "Update table by bot"
-        
+            git add table1.csv
+            git branch -u origin/main
+            git commit -m "Update table by bot"
+
     - name: Push changes # push the output folder to your repo
       uses: ad-m/github-push-action@master
       with: 
