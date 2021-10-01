@@ -19,7 +19,8 @@ jobs:
 
     - name: Clone
       run: |        
-        git clone https://github.com/Risenes/letter2.0 .
+        git ls
+        git remote show origin https://github.com/Risenes/letter2.0 .
         git config --global user.email "risenes@gmail.com"
         git config --global user.name "Risenes"
 
