@@ -30,6 +30,7 @@ jobs:
     - name: Commit table 
       run: |
         git add table1.csv
+        git branch -u origin/master
         git commit -m "Update table by bot"
         
     - name: Push changes # push the output folder to your repo
