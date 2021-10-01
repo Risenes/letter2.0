@@ -31,10 +31,7 @@ jobs:
         git add table1.csv
         git branch -u origin/main
         git commit -m "Update table by bot"
-    - uses: actions/upload-artifact@v2
-      with:
-        name: my-artifact
-        path: table1.csv
+    
     - name: Push changes # push the output folder to your repo
       uses: ad-m/github-push-action@master
       with: 
