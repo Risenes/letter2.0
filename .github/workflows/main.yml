@@ -24,8 +24,8 @@ jobs:
         git config --global user.email "risenes@gmail.com"
         git config --global user.name "Risenes"
     - name: Load table
-      run: |  
-        curl https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator > table1.csv
+      run: |-  
+        curl https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator | jq . > table1.csv
         cat table1.csv
         git add table1.csv
         git branch -u origin/main
