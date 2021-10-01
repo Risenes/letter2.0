@@ -22,10 +22,7 @@ jobs:
       with:
         name: my-artifact
         path: table1.cvs
-    - name: move to dir # Move the generated files into output folder
-      run: |
-        mkdir -p output
-        yes| cp -rf table1.cvs ./output/
+    
     - name: Commit files 
       run: |
         
