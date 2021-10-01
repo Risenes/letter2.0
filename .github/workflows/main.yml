@@ -29,7 +29,7 @@ jobs:
     
     - name: Commit table 
       run: |
-        cat table.csv 
+        cat table1.csv 
         git add table1.csv
         git branch -u origin/main
         git commit -m "Update table by bot"
