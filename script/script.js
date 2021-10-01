@@ -236,3 +236,48 @@ jobs:
         
         github_token: ${{ secrets.LETTER }}
         force: true
+
+
+
+        name: Curl table
+
+on:
+  schedule:
+    - cron:  '30 5,17 * * *'
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  
+  workflow_dispatch:
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+
+    - name: Clone
+      run: |        
+        git ls-files
+        git remote show origin https://github.com/Risenes/letter2.0 .
+        git config --global user.email "risenes@gmail.com"
+        git config --global user.name "Risenes"
+    - name: Load table
+      run: |  
+        curl https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator > table1.csv
+        cat table1.csv
+        git add table1.csv
+        git branch -u origin/main
+        git commit -m "Update table by bot"
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: table1.csv
+    - name: Push changes # push the output folder to your repo
+      uses: ad-m/github-push-action@master
+      with: 
+        
+        github_token: ${{ secrets.LETTER }}
+        force: true
