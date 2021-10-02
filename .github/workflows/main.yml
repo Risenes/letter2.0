@@ -26,14 +26,7 @@ jobs:
     - name: Load table and commit
       run: |-  
         curl https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator | jq . > table1.csv
-        cat table1.csv
-        git add table1.csv
-        git branch -u origin/main
-        git commit -m "Update table by bot"
-        git push
-    - name: Push changes # push the output folder to your repo
-      uses: ad-m/github-push-action@main
-      with: 
-        
-        github_token: ${{ secrets.LETTER }}
-        force: true
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: table1.csv
