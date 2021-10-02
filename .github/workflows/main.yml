@@ -29,7 +29,7 @@ jobs:
         git config --global user.name "Risenes"
     - name: Load table and commit
       run: |-  
-        git add table1.csv
+        
         git branch -u origin/main
         git commit -m "Update table by bot"
         
