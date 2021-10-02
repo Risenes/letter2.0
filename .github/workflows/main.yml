@@ -19,7 +19,7 @@ jobs:
 
     - name: Download Feed
       run: |-
-        curl "https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator" | jq . > output_file.json
+        curl https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator | jq . > table.csv
     - name: Commit and push changes
       run: |-
         git diff
