@@ -24,13 +24,11 @@ jobs:
         git config --global user.name "Risenes"
     - name: Download Feed
       run: |-
-        curl https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator > table.csv
+        curl "https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator" > table.csv
         cat table.csv
         git add table.csv
-        git diff
-        git config user.name "Automated"
-        git config user.email "risenes@gmail.com"
-        git diff --quiet || (git add -A && git commit -m "Updated with latest")
+        git branch -u origin/main
+        git commit -m "Add changes"
         git push
     - name: Push changes # push the output folder to your repo
       uses: ad-m/github-push-action@master
