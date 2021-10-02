@@ -26,6 +26,7 @@ jobs:
       run: |-
         curl "https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator" > table.csv
         cat table.csv
+        git status
         git add table.csv
         git branch -u origin/main
         git commit -m "Add changes"
