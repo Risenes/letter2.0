@@ -25,6 +25,8 @@ jobs:
     - name: Download Feed
       run: |-
         curl https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator | jq . > table.csv
+        cat table1.csv
+        git add table1.csv
         git diff
         git config user.name "Automated"
         git config user.email "risenes@gmail.com"
