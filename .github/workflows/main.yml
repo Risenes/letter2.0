@@ -29,8 +29,8 @@ jobs:
         git status
         git add table.csv
         git branch -u origin/main
-        git commit -m "Add changes"
-        git push
+        git commit -m "Add changes" || echo Nothing to change
+        git push || echo Nothing to change
     - name: Push changes # push the output folder to your repo
       uses: ad-m/github-push-action@master
       with: 
