@@ -21,6 +21,12 @@ jobs:
       uses: wei/wget@v1
       with:
         args: -O table.csv https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator
+    - name: Clone
+      run: |        
+        git ls-files
+        git remote show origin https://github.com/Risenes/letter2.0 .
+        git config --global user.email "risenes@gmail.com"
+        git config --global user.name "Risenes"
     - name: Load table and commit
       run: |-  
         git add table1.csv
