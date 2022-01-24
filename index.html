@@ -1,12 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
 	<title>Document</title>
 </head>
+
 <body>
+
+	<div class="content" id="letter">
+		<div class="container">
+			<div class="content__body">
+				<div class="generator">
+					<div class="generator__title">Генератор письма</div>
+					<div class="generator__menu">
+						<form method="POST" name="letter__form">
+
+							<div class="generator__body">
+								<!-- <div class="generator__season">
+									<input type="checkbox" id="SeasonHello"> Сезонное
+									приветствие
+								</div> -->
+								<div class="generator__city city">
+									<div class="city__title">Введите город</div>
+									<div class="city__input"><input size="20" name="selectCity" placeholder="На японском"></div>
+								</div>
+								<div class="generator__weather weather">
+									<div class="weather__checkbox"><input type="checkbox" id="Weather" onclick="boxFunctionWeather()">
+										Выбрать погоду</div>
+									<div class="weather__select" id="selectWeather" style="display:block">
+										<select name="weather" id="weather" disabled>
+											<optgroup label="Весна">
+												<option value=ВеснаСолнце>Светит солнце</option>
+												<option value=ВеснаСнег>Идет снег</option>
+												<option value=ВеснаДождь>Идут дожди</option>
+												<option value=ВеснаМенять>Погода часто меняется</option>
+												<option value=ВеснаТает>Снег тает</option>
+											</optgroup>
+											<optgroup label="Лето">
+												<option value=ЛетоХорош>Хорошая погода</option>
+												<option value=ЛетоДождь>Идут дожди</option>
+												<option value=ЛетоЖара>Жарко</option>
+											</optgroup>
+											<optgroup label="Осень">
+												<option value=ОсеньХорош>Хорошая погода</option>
+												<option value=ОсеньХолодать>Стало холодать</option>
+												<option value=ОсеньДождь>Идут дожди</option>
+												<option value=ОсеньМомидзи>Момидзи</option>
+												<option value=ОсеньМенять>Погода часто меняется</option>
+											</optgroup>
+											<optgroup label="Зима">
+												<option value=ЗимаЯсно>Ясная погода</option>
+												<option value=ЗимаТепло>Теплая погода</option>
+												<option value=ЗимаСнег>Идет снег</option>
+												<option value=ЗимаХолод>Холодно</option>
+
+											</optgroup>
+										</select>
+									</div>
+								</div>
+								<!-- <div class="generator__health">
+									<input type="checkbox" id="Health"> Мое Здоровье
+								</div> -->
+								<div class="generator__health">
+									<div class="health__checkbox"><input type="checkbox" id="Health" onclick="boxFunctionHealth()"> Мое
+										Здоровье
+									</div>
+									<div class="health__select" id="selectHealth" style="display:block">
+										<select name="selfHealth" id="selfHealth" disabled>
+											<option value=ЯЗдоров>Я здоров</option>
+											<option value=ЯБолею>Я болею</option>
+										</select>
+									</div>
+								</div>
+								<div class="generator__arm">
+									<div class="arm__checkbox"><input type="checkbox" id="Arm" onclick="boxFunctionArm()"> Мои успехи
+									</div>
+									<div class="arm__select" id="selectArm" style="display:block">
+										<select name="selfArm" id="selfArm" disabled>
+											<option value=ЯГамбарил>Я гамбарил</option>
+											<option value=ЯНеГамбарил>Я не гамбарил</option>
+										</select>
+									</div>
+								</div>
+								<div class="generator__name name">
+									<div class="name__title">Введите имя</div>
+									<div class="name__input"> <input class="name__input" size="20" name="selectName"
+											placeholder="На японском"></div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="btn-letter"><input type="button" value="Сгенерировать" class="btncls" onclick="getValue();">
+					</div>
+				</div>
+				<div class="letter" id="letter" lang="ja-JP" xml:lang="ja-JP">
+					<div class="letter__hello" id="letter__hello" lang="ja-JP" xml:lang="ja-JP"></div>
+					<div class="letter__body" id="letter__body" lang="ja-JP" xml:lang="ja-JP"></div>
+					<div class="letter__bye" id="letter__bye" lang="ja-JP" xml:lang="ja-JP"></div>
+					<div class="letter__date" id="letter__date" lang="ja-JP" xml:lang="ja-JP"></div>
+					<div class="letter__name" id="letter__name" lang="ja-JP" xml:lang="ja-JP"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script src="script/script.js"></script>
 </body>
+
 </html>

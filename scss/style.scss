@@ -22,3 +22,250 @@ $fontfamily: "Noto Serif";
 @import "_header";
 @import "_footer";
 
+
+
+.content {
+  background-color: black;
+  // height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  // .content__body
+
+  &__body {
+    // height: 100vh;
+    flex: 1 1 auto;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+  }
+}
+.content::before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin: -30px 0 0;
+}
+
+.generator {
+  background-color: gray;
+  border-radius: 50px;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  // .generator__title
+
+  &__title {
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 15px 0;
+  }
+
+  // .generator__menu
+
+
+  // .generator__body
+
+  &__body {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  // .generator__season
+
+  &__season {
+    padding: 5px 10px;
+  }
+
+  // .generator__city
+
+  &__city {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 10px;
+  }
+
+  // .generator__weather
+
+  &__weather {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 10px;
+  }
+
+  // .generator__health
+
+  &__health {
+    padding: 5px 10px;
+  }
+
+  // .generator__arm
+
+  &__arm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 10px;
+  }
+
+  // .generator__name
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 10px;
+  }
+}
+.city {
+  // .city__title
+
+  &__title {
+    padding: 0 0 10px 0;
+  }
+
+  // .city__input
+
+
+}
+.weather {
+  // .weather__checkbox
+
+  &__checkbox {
+    padding: 0 0 10px 0;
+  }
+
+  // .weather__select
+}
+
+
+.health {
+  // .health__checkbox
+
+  &__checkbox {
+    padding: 0 0 10px 0;
+  }
+}
+
+
+.arm {
+  // .arm__checkbox
+
+  &__checkbox {
+    padding: 0 0 10px 0;
+  }
+
+  // .arm__select
+
+
+}
+.name {
+  // .name__title
+
+  &__title {
+    padding: 0 0 10px 0;
+  }
+
+  // .name__input
+
+
+}
+.letter {
+  margin: 20px 0;
+  flex: 0 1 auto;
+  height: 90%;
+  min-height: 600px;
+  max-height: 600px;
+  background-image: url(..//img/letterBG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  max-width: 100%;
+  // .letter__hello
+
+  &__hello {
+    writing-mode: vertical-rl;
+    font-family: "Noto Serif JP";
+    font-size: 20px;
+    line-height: 50px;
+    text-align: start;
+    align-self: flex-start;
+    word-wrap: break-word;
+    word-break: keep-all;
+  }
+
+  // .letter__body
+
+  &__body {
+    flex: 0 0 auto;
+    writing-mode: vertical-rl;
+    font-family: "Noto Serif JP";
+    font-size: 20px;
+    line-height: 50px;
+    text-align: start;
+    hyphens: auto;
+    align-self: flex-start;
+    word-wrap: break-word;
+    word-break: keep-all;
+  }
+
+  // .letter__bye
+
+  &__bye {
+    writing-mode: vertical-rl;
+    font-family: "Noto Serif JP";
+    font-size: 20px;
+    line-height: 50px;
+    text-orientation: upright;
+    text-align: start;
+    align-self: flex-start;
+    word-break: keep-all;
+  }
+
+  // .letter__date
+
+  &__date {
+    writing-mode: vertical-rl;
+    font-family: "Noto Serif JP";
+    font-size: 20px;
+    line-height: 50px;
+    text-orientation: upright;
+    align-self: flex-start;
+    text-align: start;
+    word-break: keep-all;
+  }
+
+  // .letter__name
+
+  &__name {
+    writing-mode: vertical-rl;
+    font-family: "Noto Serif JP";
+    font-size: 20px;
+    line-height: 50px;
+    align-self: flex-end;
+    text-align: end;
+  }
+}
+
+.btn-letter {
+  padding: 15px;
+}
+.btncls {
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
