@@ -24,7 +24,7 @@ jobs:
         git config --global user.name "Risenes"
     - name: Download Feed
       run: |-
-        curl "https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=generator" > table.csv
+        curl "https://docs.google.com/spreadsheets/d/1d6E9VREMtVGHdYubZoZs5fmS2P7tCi6w47LjDdylphE/gviz/tq?tqx=out:csv&sheet=letter" > table.csv
         cat table.csv
         git status
         git add table.csv
