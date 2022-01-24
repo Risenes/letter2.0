@@ -52,16 +52,14 @@ function getValue() {
 
 
 	let rawFile = new XMLHttpRequest();
-	rawFile.open("GET", "../../letter2.0/table.csv", true);
+	rawFile.open("GET", "../../letter2.0/table.csv", false);
 	rawFile.onreadystatechange = function () {
 		if (rawFile.readyState === 4) {
 			if (rawFile.status === 200 || rawFile.status == 0) {
 				let allText = rawFile.responseText;
 				let result = csvJSON(allText);
 				console.log(result)
-				jsLetter = JSON.stringify(result);
-				console.log(jsLetter)
-				
+								
 				let resHello = result.map(x => x.Приветствие).filter(String)
 				let helloR = checkText(resHello);
 				document.getElementById('letter__hello').innerHTML = helloR + " いつも　お世話に　なって　おります。";
