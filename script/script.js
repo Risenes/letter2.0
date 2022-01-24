@@ -67,7 +67,7 @@
 // }
 
 // var rawFile = new XMLHttpRequest();
-// rawFile.open("GET", "../table.csv", true);
+// rawFile.open("GET", "../../table.csv", true);
 // rawFile.onreadystatechange = function () {
 //   if (rawFile.readyState === 4) {
 //     if (rawFile.status === 200 || rawFile.status == 0) {
@@ -168,7 +168,7 @@ function getValue() {
 
 
 	let rawFile = new XMLHttpRequest();
-	rawFile.open("GET", "../table.csv", true);
+	rawFile.open("GET", "../../table.csv", true);
 	rawFile.onreadystatechange = function () {
 		if (rawFile.readyState === 4) {
 			if (rawFile.status === 200 || rawFile.status == 0) {
