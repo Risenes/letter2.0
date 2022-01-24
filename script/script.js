@@ -52,7 +52,8 @@ function getValue() {
 
 
 	let rawFile = new XMLHttpRequest();
-	rawFile.open("GET", "../../letter2.0/table.csv", false);
+	rawFile.open("GET", "../../letter2.0/table.csv", true);
+	rawFile.send();
 	rawFile.onreadystatechange = function () {
 		if (rawFile.readyState === 4) {
 			if (rawFile.status === 200 || rawFile.status == 0) {
@@ -126,7 +127,7 @@ function getValue() {
 		document.getElementById("letter__body").innerHTML = document.getElementById("letter__body").innerHTML.replace('city', city);
 	}
 
-	rawFile.send(null);
+// 	rawFile.send(null);
 }
 
 function boxFunctionWeather() {
