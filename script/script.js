@@ -52,7 +52,7 @@ function getValue() {
 
 
 	let rawFile = new XMLHttpRequest();
-	rawFile.open("GET", "https://github.com/Risenes/letter2.0/blob/main/table.csv", true);
+	rawFile.open("GET", "/letter2.0/table.csv", true);
 	rawFile.onreadystatechange = function () {
 		if (rawFile.readyState === 4) {
 			if (rawFile.status === 200 || rawFile.status == 0) {
