@@ -52,7 +52,7 @@ function getValue() {
 
 
 	let rawFile = new XMLHttpRequest();
-	rawFile.open("GET", "/letter2.0/table.csv", false);
+	rawFile.open("GET", "/letter2.0/table.csv", true);
 	rawFile.onreadystatechange = async function () {
 		if (rawFile.readyState === 4) {
 			if (rawFile.status === 200 || rawFile.status == 0) {
