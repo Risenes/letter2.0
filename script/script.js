@@ -1,8 +1,7 @@
 let arrNumber = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二", "十三", "十四", "十五", "十六", "十七", "十八", "十九", "二十",
 	"二十一", "二十二", "二十三", "二十四", "二十五", "二十六", "二十七", "二十八", "二十九", "三十", "三十一"];
 
-function getValue() {
-	function csvJSON(csvText) {
+function csvJSON(csvText) {
 		let lines = [];
 		const linesArray = csvText.split('\n');
 		// for trimming and deleting extra space 
@@ -28,8 +27,10 @@ function getValue() {
 		//return result; //JavaScript object
 		// return JSON.stringify(result); //JSON
 		return result;
-	}
+}
 
+function getValue() {
+	
 	let date = new Date();
 	let year = date.getFullYear() - 2018;
 	let checkBoxWeather = document.getElementById("Weather");
@@ -56,8 +57,8 @@ function getValue() {
 	rawFile.onreadystatechange = function () {
 		if (rawFile.readyState === 4) {
 			if (rawFile.status === 200 || rawFile.status == 0) {
-				let allText = rawFile.responseText;
-				let result = csvJSON(allText);
+				let allText = await rawFile.responseText;
+				let result = await csvJSON(allText);
 				console.log(result)
 				
 				
