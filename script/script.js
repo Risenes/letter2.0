@@ -57,8 +57,8 @@ function getValue() {
 	rawFile.onreadystatechange = function () {
 		if (rawFile.readyState === 4) {
 			if (rawFile.status === 200 || rawFile.status == 0) {
-				let allText = await rawFile.responseText;
-				let result = await csvJSON(allText);
+				let allText = rawFile.responseText;
+				let result = csvJSON(allText);
 				console.log(result)
 				
 				
