@@ -60,9 +60,11 @@ function getValue() {
 				let allText = await rawFile.responseText;
 				let result = await csvJSON(allText);
 				console.log(result)
+				let jsLetter = JSON.stringify(result);
+				console.log(jsLetter)
 				
 				
-				let resHello = result.map(x => x.Приветствие).filter(String)
+				let resHello = jsLetter.map(x => x.Приветствие).filter(String)
 				console.log(resHello)
 // 				let helloR = checkText(resHello);
 // 				console.log(helloR)
