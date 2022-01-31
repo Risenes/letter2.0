@@ -54,17 +54,17 @@ function getValue() {
 
 	let rawFile = new XMLHttpRequest();
 	rawFile.open("GET", "/letter2.0/table.csv", true);
-	rawFile.onreadystatechange = async function () {
+	rawFile.onreadystatechange = function () {
 		if (rawFile.readyState === 4) {
 			if (rawFile.status === 200 || rawFile.status == 0) {
-				let allText = await rawFile.responseText;
-				let result = await csvJSON(allText);
+				let allText = rawFile.responseText;
+				let result = csvJSON(allText);
 				console.log(result)
 				let jsLetter = JSON.stringify(result);
 				console.log(jsLetter)
 				
 				
-				let resHello = result.map(x => x.Приветствие)
+				let resHello = result.map(x => x.Приветствие).filter(String)
 				console.log(resHello)
 				let helloR = checkText(resHello);
 				console.log(helloR)
