@@ -68,7 +68,7 @@ function getValue() {
 				console.log(resHello)
 				let helloR = checkText(resHello);
 				console.log(helloR)
-				document.getElementById('letter__hello').innerHTML = resHello + " いつも　お世話に　なって　おります。";
+				document.getElementById('letter__hello').innerHTML = helloR + " いつも　お世話に　なって　おります。";
 
 				let senseiHealth = result.map(x => x.ЗдоровьеСенсея).filter(String)
 				let SHR = checkText(senseiHealth)
