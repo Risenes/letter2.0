@@ -64,7 +64,7 @@ function getValue() {
 				console.log(jsLetter)
 				
 				
-				let resHello = jsLetter.map(x => x.Приветствие).filter(String)
+				let resHello = jsLetter.Приветствие.filter(String)
 				console.log(resHello)
 // 				let helloR = checkText(resHello);
 // 				console.log(helloR)
