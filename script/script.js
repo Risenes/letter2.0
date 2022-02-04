@@ -64,7 +64,7 @@ function getValue() {
 				console.log(jsLetter)
 				
 				
-				let resHello = result.map(x => x.Приветствие).filter(String)
+				let resHello = result.map(x => x.Приветствие)
 				console.log(resHello)
 				let helloR = resHello[Math.floor(Math.random() * resHello.length)];
 				console.log(helloR)
