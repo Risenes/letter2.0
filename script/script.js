@@ -54,14 +54,14 @@ function getValue() {
 
 	let rawFile = new XMLHttpRequest();
 	rawFile.open("GET", "/letter2.0/table.csv", false);
-	rawFile.onreadystatechange = function () {
-		if (rawFile.readyState === 4) {
+	rawFile.onload = async function () {
+		
 			if (rawFile.status === 200 || rawFile.status == 0) {
-				let allText = rawFile.responseText;
-				let result = csvJSON(allText);
+				let allText = await rawFile.responseText;
+				let result = await csvJSON(allText);
 				console.log(result)
-				let jsLetter = JSON.stringify(result);
-				console.log(jsLetter)
+// 				let jsLetter = JSON.stringify(result);
+// 				console.log(jsLetter)
 				
 				
 				let resHello = result.map(x => x.Приветствие)
@@ -125,7 +125,7 @@ function getValue() {
 // 				let byeR = checkText(resBye)
 // 				document.getElementById('letter__bye').innerHTML = byeR + "これからも よろしく お願い　いたします。"
 			}
-		}
+		
 	}
 	city = document.letter__form.selectCity.value.toLowerCase();
 	if (city) {
