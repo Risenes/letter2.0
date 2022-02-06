@@ -29,7 +29,7 @@ function csvJSON(csvText) {
 		return result;
 }
 
-async function getValue() {
+function getValue() {
 	
 	let date = new Date();
 	let year = date.getFullYear() - 2018;
@@ -53,12 +53,12 @@ async function getValue() {
 
 
 	let rawFile = new XMLHttpRequest();
-	await rawFile.open("GET", "/letter2.0/table.csv", false);
-	rawFile.onload = async function () {
+	rawFile.open("GET", "/letter2.0/table.csv", true);
+	rawFile.onload = function () {
 		
 			if (rawFile.status === 200 || rawFile.status == 0) {
 				let allText = rawFile.responseText;
-				let result = await csvJSON(allText);
+				let result = csvJSON(allText);
 				console.log(result)
 // 				let jsLetter = JSON.stringify(result);
 // 				console.log(jsLetter)
