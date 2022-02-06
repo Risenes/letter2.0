@@ -57,7 +57,7 @@ async function getValue() {
 	rawFile.onload = async function () {
 		
 			if (rawFile.status === 200 || rawFile.status == 0) {
-				let allText = await rawFile.responseText;
+				let allText = rawFile.responseText;
 				let result = await csvJSON(allText);
 				console.log(result)
 // 				let jsLetter = JSON.stringify(result);
