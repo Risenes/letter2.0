@@ -2,31 +2,31 @@ let arrNumber = ["一", "二", "三", "四", "五", "六", "七", "八", "九", 
 	"二十一", "二十二", "二十三", "二十四", "二十五", "二十六", "二十七", "二十八", "二十九", "三十", "三十一"];
 
 function csvJSON(csvText) {
-		let lines = [];
-		const linesArray = csvText.split('\n');
+	let lines = [];
+	const linesArray = csvText.split('\n');
 		// for trimming and deleting extra space 
-		linesArray.forEach((e) => {
-			const row = e.replace(/[\s]+[,]+|[,]+[\s]+/g, ',').trim();
-			lines.push(row);
-		});
+	linesArray.forEach((e) => {
+		const row = e.replace(/[\s]+[,]+|[,]+[\s]+/g, ',').trim();
+		lines.push(row);
+	});
 		// for removing empty record
-		lines.splice(lines.length - 1, 1);
-		const result = [];
-		const headers = lines[0].split(",");
+	lines.splice(lines.length - 1, 1);
+	const result = [];
+	const headers = lines[0].split(",");
 
-		for (let i = 1; i < lines.length; i++) {
+	for (let i = 1; i < lines.length; i++) {
 
-			const obj = {};
-			const currentline = lines[i].split(",");
+		const obj = {};
+		const currentline = lines[i].split(",");
 
-			for (let j = 0; j < headers.length; j++) {
-				obj[headers[j]] = currentline[j];
-			}
-			result.push(obj);
+		for (let j = 0; j < headers.length; j++) {
+			obj[headers[j]] = currentline[j];
 		}
+		result.push(obj);
+	}
 		//return result; //JavaScript object
 		// return JSON.stringify(result); //JSON
-		return result;
+	return result;
 }
 
 function getValue() {
@@ -49,28 +49,26 @@ function getValue() {
 	document.getElementById('letter__name').innerHTML = selfName;
 
 	// document.getElementById('letter__body').innerHTML = arrLetterBody.join("<br />");
-
+// 	/letter2.0/table.csv
 
 
 	let rawFile = new XMLHttpRequest();
-	rawFile.open("GET", "/letter2.0/table.csv", true);
+	rawFile.open("GET", "/letter2.0/table.csv", false);
 	rawFile.onload = function () {
-		
 			if (rawFile.status === 200 || rawFile.status == 0) {
 				let allText = rawFile.responseText;
 				let result = csvJSON(allText);
 				console.log(result)
-// 				let jsLetter = JSON.stringify(result);
-// 				console.log(jsLetter)
+				// jsLetter = JSON.stringify(result);
+				// console.log(jsLetter)
 				
 				
 				function hello() {
-				let resHello = result.map(x => x.Приветствие)
-				console.log(resHello)
-				let helloR = resHello[Math.floor(Math.random() * resHello.length)];
-				console.log(helloR)
+				let resHello = result.map(x => x.Приветствие).filter(String)
+				let helloR = checkText(resHello);
+				
 				document.getElementById('letter__hello').innerHTML = helloR + " いつも　お世話に　なって　おります。";
-				 }
+				}
 				setTimeout(hello, 5000)
 // 				let senseiHealth = result.map(x => x.ЗдоровьеСенсея).filter(String)
 // 				let SHR = checkText(senseiHealth)
