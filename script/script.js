@@ -64,12 +64,14 @@ function getValue() {
 // 				console.log(jsLetter)
 				
 				
+				function hello() {
 				let resHello = result.map(x => x.Приветствие)
 				console.log(resHello)
 				let helloR = resHello[Math.floor(Math.random() * resHello.length)];
 				console.log(helloR)
 				document.getElementById('letter__hello').innerHTML = helloR + " いつも　お世話に　なって　おります。";
-
+				 }
+				setTimeout(hello, 5000)
 // 				let senseiHealth = result.map(x => x.ЗдоровьеСенсея).filter(String)
 // 				let SHR = checkText(senseiHealth)
 
