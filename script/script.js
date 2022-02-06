@@ -124,13 +124,16 @@ function getValue() {
 // 				let resBye = result.map(x => x.Прощание).filter(String)
 // 				let byeR = checkText(resBye)
 // 				document.getElementById('letter__bye').innerHTML = byeR + "これからも よろしく お願い　いたします。"
+				
+// 				city = document.letter__form.selectCity.value.toLowerCase();
+// 	if (city) {
+// 		document.getElementById("letter__body").innerHTML = document.getElementById("letter__body").innerHTML.replace('city', city);
+// 	}
+				return;
 			}
 		
 	}
-	city = document.letter__form.selectCity.value.toLowerCase();
-	if (city) {
-		document.getElementById("letter__body").innerHTML = document.getElementById("letter__body").innerHTML.replace('city', city);
-	}
+	
 	rawFile.send();
 }
 
