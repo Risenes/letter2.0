@@ -63,72 +63,72 @@ function getValue() {
 				// console.log(jsLetter)
 				
 				
-				function hello() {
+				
 				let resHello = result.map(x => x.Приветствие).filter(String)
 				let helloR = checkText(resHello);
 				
 				document.getElementById('letter__hello').innerHTML = helloR + " いつも　お世話に　なって　おります。";
+				
+				
+				let senseiHealth = result.map(x => x.ЗдоровьеСенсея).filter(String)
+				let SHR = checkText(senseiHealth)
+
+				let sapporoWeather = result.map(x => x.СаппороПогода).filter(String)
+				let SWR = checkText(sapporoWeather)
+				
+
+				let thxLetter = result.map(x => x.ЗаПисьмо).filter(String)
+				let LR = checkText(thxLetter)
+
+				let thxCheck = result.map(x => x.заПроверку).filter(String)
+				let CR = checkText(thxCheck)
+				
+				let resW
+				let resWeather
+				if (checkBoxWeather.checked == true) {
+					weather = document.getElementById('weather').value;
+					resWeather = result.map(x => x[weather]).filter(String)
+					resW = checkText(resWeather)
+				} else {
+					resW = "";
 				}
-				setTimeout(hello, 5000)
-// 				let senseiHealth = result.map(x => x.ЗдоровьеСенсея).filter(String)
-// 				let SHR = checkText(senseiHealth)
-
-// 				let sapporoWeather = result.map(x => x.СаппороПогода).filter(String)
-// 				let SWR = checkText(sapporoWeather)
 				
+				let resH
+				let resHealth
+				if (checkBoxHealth.checked == true) {
+					health = document.getElementById('selfHealth').value;
+					resHealth = result.map(x => x[health]).filter(String)
+					resH = checkText(resHealth)
+				} else {
+					resH = "";
+				}
 
-// 				let thxLetter = result.map(x => x.ЗаПисьмо).filter(String)
-// 				let LR = checkText(thxLetter)
+				let resArm
+				let resA
+				if (checkBoxArm.checked == true) {
+					arm = document.getElementById('selfArm').value;
+					resArm = result.map(x => x[arm]).filter(String)
+					resA = checkText(resArm)
+				} else {
+					resA = "";
+				}
 
-// 				let thxCheck = result.map(x => x.заПроверку).filter(String)
-// 				let CR = checkText(thxCheck)
+				let letterBody = SHR + SWR + LR + CR + resW + resH +resA;
+				document.getElementById('letter__body').innerHTML = letterBody;
+
+				city = document.letter__form.selectCity.value.toLowerCase();
+				if (city) {
+				document.getElementById("letter__body").innerHTML = document.getElementById("letter__body").innerHTML.replace('city', city);
+				}
+
+				let resBye = result.map(x => x.Прощание).filter(String)
+				let byeR = checkText(resBye)
+				document.getElementById('letter__bye').innerHTML = byeR + "これからも よろしく お願い　いたします。"
 				
-// 				let resW
-// 				let resWeather
-// 				if (checkBoxWeather.checked == true) {
-// 					weather = document.getElementById('weather').value;
-// 					resWeather = result.map(x => x[weather]).filter(String)
-// 					resW = checkText(resWeather)
-// 				} else {
-// 					resW = "";
-// 				}
-				
-// 				let resH
-// 				let resHealth
-// 				if (checkBoxHealth.checked == true) {
-// 					health = document.getElementById('selfHealth').value;
-// 					resHealth = result.map(x => x[health]).filter(String)
-// 					resH = checkText(resHealth)
-// 				} else {
-// 					resH = "";
-// 				}
-
-// 				let resArm
-// 				let resA
-// 				if (checkBoxArm.checked == true) {
-// 					arm = document.getElementById('selfArm').value;
-// 					resArm = result.map(x => x[arm]).filter(String)
-// 					resA = checkText(resArm)
-// 				} else {
-// 					resA = "";
-// 				}
-
-// 				let letterBody = SHR + SWR + LR + CR + resW + resH +resA;
-// 				document.getElementById('letter__body').innerHTML = letterBody;
-
-// 				city = document.letter__form.selectCity.value.toLowerCase();
-// 				if (city) {
-// 				document.getElementById("letter__body").innerHTML = document.getElementById("letter__body").innerHTML.replace('city', city);
-// 				}
-
-// 				let resBye = result.map(x => x.Прощание).filter(String)
-// 				let byeR = checkText(resBye)
-// 				document.getElementById('letter__bye').innerHTML = byeR + "これからも よろしく お願い　いたします。"
-				
-// 				city = document.letter__form.selectCity.value.toLowerCase();
-// 	if (city) {
-// 		document.getElementById("letter__body").innerHTML = document.getElementById("letter__body").innerHTML.replace('city', city);
-// 	}
+				city = document.letter__form.selectCity.value.toLowerCase();
+	if (city) {
+		document.getElementById("letter__body").innerHTML = document.getElementById("letter__body").innerHTML.replace('city', city);
+	}
 				return;
 			}
 		
