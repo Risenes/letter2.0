@@ -131,7 +131,7 @@ function getValue() {
 	if (city) {
 		document.getElementById("letter__body").innerHTML = document.getElementById("letter__body").innerHTML.replace('city', city);
 	}
-	rawFile.send(null);
+	rawFile.send();
 }
 
 function boxFunctionWeather() {
