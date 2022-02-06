@@ -29,7 +29,7 @@ function csvJSON(csvText) {
 		return result;
 }
 
-function getValue() {
+async function getValue() {
 	
 	let date = new Date();
 	let year = date.getFullYear() - 2018;
@@ -53,7 +53,7 @@ function getValue() {
 
 
 	let rawFile = new XMLHttpRequest();
-	rawFile.open("GET", "/letter2.0/table.csv", false);
+	await rawFile.open("GET", "/letter2.0/table.csv", false);
 	rawFile.onload = async function () {
 		
 			if (rawFile.status === 200 || rawFile.status == 0) {
